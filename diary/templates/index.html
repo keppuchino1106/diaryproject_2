@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>목차</h1>
+    <div>
+        <a href="{%url 'new'%}"><button>일기 쓰기</button></a>
+    </div>
+    <div class="container">
+        {%for diary in diaries%}
+        <div>
+            <br>
+            제목: <a href="{%url 'detail' diary.id%}">{{diary.title}}</a>
+        </div>
+        {%endfor%}
+    </div>
+    <br>
+    <div>
+        <a href="{%url 'cover'%}">일기장 커버로 돌아가기</a>
+    </div>
+
+{% endblock %}
